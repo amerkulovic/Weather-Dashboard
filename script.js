@@ -1,7 +1,7 @@
 // Global variables
 let btnSearchEl = document.querySelector("#btnSearch");
 let searchInputEl = document.querySelector("#searchInput");
-let citiesArray = [];
+let citiesArray = JSON.parse(localStorage.getItem("Cities")) || [];
 // Functions
 function init() {
   // Grab last search results from local storage,
@@ -18,7 +18,9 @@ function search() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      console.log(data.list);
+      console.log(data.list[0].main);
+      console.log(data.list[0].main.temp);
     });
   let citiesObject = {
     city: city,
