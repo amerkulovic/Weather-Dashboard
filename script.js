@@ -1,6 +1,12 @@
 // Global variables
 let btnSearchEl = document.querySelector("#btnSearch");
 let searchInputEl = document.querySelector("#searchInput");
+let cityNameEl = document.getElementById("city-name");
+let cityDateEl = document.getElementById("city-date");
+let cityIconEl = document.getElementById("city-icon");
+let cityTempEl = document.getElementById("city-temp");
+let cityHumidityEl = document.getElementById("city-humidity");
+let cityWindSpeedEl = document.getElementById("city-windspeed");
 let citiesArray = JSON.parse(localStorage.getItem("Cities")) || [];
 // Functions
 function init() {
@@ -18,16 +24,19 @@ function search() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data.list);
+      console.log(data);
       console.log(data.list[0].main);
       console.log(data.list[0].main.temp);
+      cityNameEl.textContent = `City name: ${data.city.name}`;
     });
   let citiesObject = {
     city: city,
   };
   citiesArray.push(citiesObject);
+
   localStorage.setItem("Cities", JSON.stringify(citiesArray));
 }
+
 // Function calls
 init();
 // Event Listeners

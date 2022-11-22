@@ -9,16 +9,23 @@
   </head>
   <body>
     <!-- Weather header -->
-    <header class="bg-violet-200 text-stone-50 text-center text-5xl p-4">
+    <header class="bg-violet-300 text-stone-50 text-center text-5xl p-4 font-bold">
       <h1>Weather Board</h1>
     </header>
     <!-- Search Feature -->
     <section class="inline-block place-content-center mt-5">
-      <input type="text" placeholder="location" class="border-purple-400 border-2 p-0.5" id="searchInput" />
-      <button class="border-purple-400 border-2 p-0.5 rounded-lg" id="btnSearch">Search</button>
+      <input type="text" placeholder="location" class="border-purple-400 border-2 p-0.5 text-fuchsia-800 bg-purple-100" id="searchInput" />
+      <button class="border-purple-400 border-2 p-1.5 rounded-lg text-white bg-purple-500" id="btnSearch">Search</button>
     </section>
     <!-- Current City -->
-
+    <div id="div-city">
+      <h1 id="city-name"></h1>
+      <h2 id="city-date"></h2>
+      <img id="city-icon" alt="" />
+      <h2 id="city-temp"></h2>
+      <h2 id="city-humidity"></h2>
+      <h2 id="city-windspeed"></h2>
+    </div>
     <!-- 5-day Weather Forecast -->
   </body>
   <script src="script.js"></script>
