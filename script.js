@@ -7,6 +7,7 @@ let cityIconEl = document.getElementById("city-icon");
 let cityTempEl = document.getElementById("city-temp");
 let cityHumidityEl = document.getElementById("city-humidity");
 let cityWindSpeedEl = document.getElementById("city-windspeed");
+
 let citiesArray = JSON.parse(localStorage.getItem("Cities")) || [];
 // Functions
 function init() {
@@ -24,10 +25,15 @@ function search() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      console.log(data.list);
       console.log(data.list[0].main);
       console.log(data.list[0].main.temp);
       cityNameEl.textContent = `City name: ${data.city.name}`;
+      cityDateEl.textContent = `Date: ${data.list[0].dt_txt}`;
+      // cityIconEl.src = data.list[0].weather[0].icon;
+      cityTempEl.textContent = `Temp: ${data.list[0].main.temp}`;
+      cityHumidityEl.textContent = `Humidity: ${data.list[0].main.humidity}`;
+      cityWindSpeedEl.textContent = `Wind Speed: ${data.list[0].wind.speed}`;
     });
   let citiesObject = {
     city: city,
