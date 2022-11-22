@@ -1,5 +1,7 @@
 // Global variables
 let btnSearchEl = document.querySelector("#btnSearch");
+let searchInputEl = document.querySelector("#searchInput");
+
 // Functions
 function init() {
   // Grab last search results from local storage,
@@ -7,13 +9,15 @@ function init() {
 }
 
 function search() {
-  alert("I clicked");
+  let city = searchInputEl.value;
+  console.log(city);
+  let requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=517f19dc586407c39701b016a6edf914`;
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-        
+      console.log(data);
     });
 }
 // Function calls
