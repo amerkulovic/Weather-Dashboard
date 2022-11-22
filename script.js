@@ -30,13 +30,13 @@ function search() {
       console.log(data.list[0].main);
       console.log(data.list[0].main.temp);
       // for (let i = 0; i < data.list.length; i++) {
-        cityNameEl.textContent = `City name: ${data.city.name}`;
-        cityDateEl.textContent = `Date: ${data.list[i].dt_txt}`;
-        // let icon = data.list[0].weather[0].icon;
-        // cityIconEl.textContent = `${icon}.png`
-        cityTempEl.textContent = `Temp: ${data.list[i].main.temp}`;
-        cityHumidityEl.textContent = `Humidity: ${data.list[i].main.humidity}`;
-        cityWindSpeedEl.textContent = `Wind Speed: ${data.list[i].wind.speed}`;
+      cityNameEl.textContent = `City name: ${data.city.name}`;
+      cityDateEl.textContent = `Date: ${data.list[0].dt_txt}`;
+      // let icon = data.list[0].weather[0].icon;
+      // cityIconEl.textContent = `${icon}.png`
+      cityTempEl.textContent = `Temp: ${data.list[0].main.temp}`;
+      cityHumidityEl.textContent = `Humidity: ${data.list[0].main.humidity}`;
+      cityWindSpeedEl.textContent = `Wind Speed: ${data.list[0].wind.speed}`;
       // }
     });
   let citiesObject = {
