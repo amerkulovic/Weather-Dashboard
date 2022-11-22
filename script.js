@@ -7,6 +7,7 @@ let cityIconEl = document.getElementById("city-icon");
 let cityTempEl = document.getElementById("city-temp");
 let cityHumidityEl = document.getElementById("city-humidity");
 let cityWindSpeedEl = document.getElementById("city-windspeed");
+let divCityEl = document.querySelector("#div-city");
 
 let citiesArray = JSON.parse(localStorage.getItem("Cities")) || [];
 // Functions
@@ -16,8 +17,8 @@ function init() {
 }
 
 function search() {
+  divCityEl.classList.remove("hidden");
   let city = searchInputEl.value;
-  console.log(city);
 
   let requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=517f19dc586407c39701b016a6edf914`;
   fetch(requestUrl)
@@ -28,12 +29,15 @@ function search() {
       console.log(data.list);
       console.log(data.list[0].main);
       console.log(data.list[0].main.temp);
-      cityNameEl.textContent = `City name: ${data.city.name}`;
-      cityDateEl.textContent = `Date: ${data.list[0].dt_txt}`;
-      // cityIconEl.src = data.list[0].weather[0].icon;
-      cityTempEl.textContent = `Temp: ${data.list[0].main.temp}`;
-      cityHumidityEl.textContent = `Humidity: ${data.list[0].main.humidity}`;
-      cityWindSpeedEl.textContent = `Wind Speed: ${data.list[0].wind.speed}`;
+      // for (let i = 0; i < data.list.length; i++) {
+        cityNameEl.textContent = `City name: ${data.city.name}`;
+        cityDateEl.textContent = `Date: ${data.list[i].dt_txt}`;
+        // let icon = data.list[0].weather[0].icon;
+        // cityIconEl.textContent = `${icon}.png`
+        cityTempEl.textContent = `Temp: ${data.list[i].main.temp}`;
+        cityHumidityEl.textContent = `Humidity: ${data.list[i].main.humidity}`;
+        cityWindSpeedEl.textContent = `Wind Speed: ${data.list[i].wind.speed}`;
+      // }
     });
   let citiesObject = {
     city: city,
