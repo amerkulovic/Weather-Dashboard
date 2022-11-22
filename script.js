@@ -1,7 +1,7 @@
 // Global variables
 let btnSearchEl = document.querySelector("#btnSearch");
 let searchInputEl = document.querySelector("#searchInput");
-let cityArray = [];
+let citiesArray = [];
 // Functions
 function init() {
   // Grab last search results from local storage,
@@ -20,11 +20,11 @@ function search() {
     .then(function (data) {
       console.log(data);
     });
-  let cityObject = {
+  let citiesObject = {
     city: city,
   };
-  cityArray.push(cityObject);
-  localStorage.setItem("City", JSON.stringify(cityArray));
+  citiesArray.push(citiesObject);
+  localStorage.setItem("Cities", JSON.stringify(citiesArray));
 }
 // Function calls
 init();
