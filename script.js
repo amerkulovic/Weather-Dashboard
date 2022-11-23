@@ -8,6 +8,7 @@ let searchInputEl = document.querySelector("#searchInput");
 // let cityHumidityEl = document.getElementById("city-humidity");
 // let cityWindSpeedEl = document.getElementById("city-windspeed");
 let divCityEl = document.querySelector("#div-city");
+let divCurrentEl = document.querySelector("#div-current");
 let asidePastEl = document.querySelector("#aside-past");
 let pastBtnEl = document.querySelectorAll(".past-styling");
 
@@ -25,6 +26,16 @@ function init() {
       pastCity.addEventListener("click", pastSearch);
     }
   });
+}
+
+function getToday() {
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, "0");
+  let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  let yyyy = today.getFullYear();
+
+  today = yyyy + "-" + mm + "-" + dd;
+  return today.toString();
 }
 
 function pastSearch(event) {
@@ -88,6 +99,14 @@ function search() {
       return response.json();
     })
     .then(function (data) {
+      let currentCard = document.createElement("div");
+      currentCard.innerHTML += `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"/>`;
+      currentCard.innerHTML += `<h1>Date: ${getToday()}</h1>`;
+      currentCard.innerHTML += `<h2>Temp: ${data.main.temp}°F</h2>`;
+      currentCard.innerHTML += `<h2>Humidity: ${data.main.humidity}%</h2>`;
+      currentCard.innerHTML += `<h2>Wind Speed: ${data.wind.speed} mph</h2>`;
+      currentCard.classList.add("styling");
+      divCurrentEl.append(currentCard);
       console.log(data.main.temp);
       console.log(data.main.humidity);
       console.log(data.wind.speed);
