@@ -80,6 +80,20 @@ function search() {
         }
       }
     });
+
+  let currentDayUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=517f19dc586407c39701b016a6edf914&units=imperial`;
+
+  fetch(currentDayUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data.main.temp);
+      console.log(data.main.humidity);
+      console.log(data.wind.speed);
+      console.log(data.weather[0].icon);
+    });
+
   let citiesObject = {
     city: city,
   };
