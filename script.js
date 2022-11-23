@@ -8,10 +8,17 @@ let searchInputEl = document.querySelector("#searchInput");
 // let cityHumidityEl = document.getElementById("city-humidity");
 // let cityWindSpeedEl = document.getElementById("city-windspeed");
 let divCityEl = document.querySelector("#div-city");
+let asidePastEl = document.querySelector("#aside-past");
 
 let citiesArray = JSON.parse(localStorage.getItem("Cities")) || [];
 // Functions
 function init() {
+  console.log(citiesArray[0].city);
+  citiesArray.forEach((city) => {
+    let pastCity = document.createElement("div");
+    pastCity.innerHTML = city.city;
+    asidePastEl.append(pastCity);
+  });
   // Grab last search results from local storage,
   //  and put them on the left side of the page
 }
