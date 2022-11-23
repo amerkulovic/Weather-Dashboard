@@ -39,9 +39,10 @@ function search() {
           // let icon = data.list[i].weather[i].icon;
           // cityIconEl.innerHTML = `${icon}.png`
           // cityCard.innerHTML += `<img ${icon} />`;
-          cityCard.innerHTML += `<h2>Temp: ${data.list[i].main.temp}</h2>`;
+          cityCard.innerHTML += `<h2>Temp: ${data.list[i].main.temp}°F</h2>`;
           cityCard.innerHTML += `<h2>Humidity: ${data.list[i].main.humidity}</h2>`;
           cityCard.innerHTML += `<h2>Wind Speed: ${data.list[i].wind.speed}</h2>`;
+          cityCard.classList.add("styling");
           divCityEl.append(cityCard);
         }
       }
