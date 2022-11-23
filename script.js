@@ -20,7 +20,7 @@ function search() {
   divCityEl.classList.remove("hidden");
   let city = searchInputEl.value;
 
-  let requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=517f19dc586407c39701b016a6edf914`;
+  let requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=517f19dc586407c39701b016a6edf914&units=imperial`;
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
@@ -36,8 +36,9 @@ function search() {
 
           // cityCard.innerHTML += `<h1>City name: ${data.city.name}</h1>`;
           cityCard.innerHTML += `<h1>Date: ${data.list[i].dt_txt}</h1>`;
-          // let icon = data.list[0].weather[0].icon;
+          // let icon = data.list[i].weather[i].icon;
           // cityIconEl.innerHTML = `${icon}.png`
+          // cityCard.innerHTML += `<img ${icon} />`;
           cityCard.innerHTML += `<h2>Temp: ${data.list[i].main.temp}</h2>`;
           cityCard.innerHTML += `<h2>Humidity: ${data.list[i].main.humidity}</h2>`;
           cityCard.innerHTML += `<h2>Wind Speed: ${data.list[i].wind.speed}</h2>`;
