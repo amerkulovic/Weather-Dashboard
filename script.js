@@ -14,10 +14,14 @@ let citiesArray = JSON.parse(localStorage.getItem("Cities")) || [];
 // Functions
 function init() {
   console.log(citiesArray[0].city);
+  let count = 0;
   citiesArray.forEach((city) => {
-    let pastCity = document.createElement("div");
-    pastCity.innerHTML = city.city;
-    asidePastEl.append(pastCity);
+    if (count < 10) {
+      let pastCity = document.createElement("div");
+      pastCity.innerHTML = city.city;
+      asidePastEl.append(pastCity);
+      count++;
+    }
   });
   // Grab last search results from local storage,
   //  and put them on the left side of the page
@@ -50,7 +54,7 @@ function search() {
   let citiesObject = {
     city: city,
   };
-  citiesArray.push(citiesObject);
+  citiesArray.unshift(citiesObject);
 
   localStorage.setItem("Cities", JSON.stringify(citiesArray));
 }
