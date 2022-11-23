@@ -26,16 +26,11 @@ function search() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data.list);
-      console.log(data.list[0].main);
-      console.log(data.list[0].main.temp);
       for (let i = 0; i < data.list.length; i++) {
-        dtText = data.list[i].dt_txt.split(" ")[1];
+        let dtText = data.list[i].dt_txt.split(" ")[1];
         if (dtText === "00:00:00") {
           let cityCard = document.createElement("div");
-
-          // cityCard.innerHTML += `<h1>City name: ${data.city.name}</h1>`;
-          cityCard.innerHTML += `<h1>Date: ${data.list[i].dt_txt}</h1>`;
+          cityCard.innerHTML += `<h1>Date: ${data.list[i].dt_txt.split(" ")[0]}</h1>`;
           // let icon = data.list[i].weather[i].icon;
           // cityIconEl.innerHTML = `${icon}.png`
           // cityCard.innerHTML += `<img ${icon} />`;
