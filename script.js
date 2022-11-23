@@ -31,7 +31,7 @@ function pastSearch(event) {
   divCityEl.classList.remove("hidden");
   let city = event.target.innerHTML;
 
-  let requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=517f19dc586407c39701b016a6edf914&units=imperial`;
+  let requestUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=1216c6d8b1f2b30f4fcbb22eb9353470&units=imperial`;
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
