@@ -28,15 +28,13 @@ function search() {
     .then(function (data) {
       for (let i = 0; i < data.list.length; i++) {
         let dtText = data.list[i].dt_txt.split(" ")[1];
-        if (dtText === "00:00:00") {
+        if (dtText === "18:00:00") {
           let cityCard = document.createElement("div");
+          cityCard.innerHTML += `<img src="http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png"/>`;
           cityCard.innerHTML += `<h1>Date: ${data.list[i].dt_txt.split(" ")[0]}</h1>`;
-          // let icon = data.list[i].weather[i].icon;
-          // cityIconEl.innerHTML = `${icon}.png`
-          // cityCard.innerHTML += `<img ${icon} />`;
           cityCard.innerHTML += `<h2>Temp: ${data.list[i].main.temp}°F</h2>`;
-          cityCard.innerHTML += `<h2>Humidity: ${data.list[i].main.humidity}</h2>`;
-          cityCard.innerHTML += `<h2>Wind Speed: ${data.list[i].wind.speed}</h2>`;
+          cityCard.innerHTML += `<h2>Humidity: ${data.list[i].main.humidity}%</h2>`;
+          cityCard.innerHTML += `<h2>Wind Speed: ${data.list[i].wind.speed} mph</h2>`;
           cityCard.classList.add("styling");
           divCityEl.append(cityCard);
         }
