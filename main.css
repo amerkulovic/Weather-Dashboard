@@ -8,3 +8,14 @@
   padding: 5px;
   margin: 2px;
 }
+
+.past-styling {
+  border: 2.5px solid purple;
+  padding: 2px;
+  margin: 2px;
+  background-color: rgba(128, 0, 197, 0.742);
+  color: white;
+  padding: 3px;
+  margin: 2px 5px;
+  cursor: pointer;
+}
