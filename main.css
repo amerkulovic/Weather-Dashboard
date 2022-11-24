@@ -4,7 +4,7 @@
   margin: 5px;
   border-radius: 8px;
   text-align: center;
-  color: rgba(6, 71, 121, 0.742);
+  color: rgb(0, 77, 177);
 }
 
 .header {
@@ -18,13 +18,15 @@
   padding: 10px;
   margin: 5px;
   border-radius: 8px;
+  background-image: linear-gradient(white, rgb(181, 195, 241), rgb(0, 163, 251), rgb(0, 109, 251));
+  color: white;
 }
 
 .past-styling {
   text-align: center;
   padding: 2px;
   margin: 2px;
-  background-color: rgba(14, 130, 218, 0.742);
+  background-color: rgb(0, 109, 251);
   color: white;
   padding: 3px;
   margin: 2px 5px;
@@ -35,8 +37,11 @@
 .current-styling {
   text-align: center;
   border: 2.5px solid rgba(14, 130, 218, 0.742);
-  padding: 5px 100px;
+  padding: 0 100px;
+  padding-bottom: 15px;
   margin: 15px 2px 2px 2px;
   border-radius: 8px;
   cursor: pointer;
+  background-image: linear-gradient(white, rgb(181, 195, 241), rgb(0, 163, 251), rgb(0, 109, 251));
+  color: white;
 }
