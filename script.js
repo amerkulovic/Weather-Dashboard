@@ -45,7 +45,6 @@ function pastSearch(event) {
     })
     .then(function (data) {
       divCityEl.innerHTML = "";
-      console.log(divCityEl.innerHTML);
       for (let i = 0; i < data.list.length; i++) {
         let dtText = data.list[i].dt_txt.split(" ")[1];
         if (dtText === "15:00:00") {
@@ -55,7 +54,11 @@ function pastSearch(event) {
           cityCard.innerHTML += `<h2>Temp: ${data.list[i].main.temp}°F</h2>`;
           cityCard.innerHTML += `<h2>Humidity: ${data.list[i].main.humidity}%</h2>`;
           cityCard.innerHTML += `<h2>Wind Speed: ${data.list[i].wind.speed} mph</h2>`;
-          cityCard.classList.add("styling");
+          if (data.list[i].main.temp > 65) {
+            cityCard.classList.add("styling-hot");
+          } else {
+            cityCard.classList.add("styling-cold");
+          }
           divCityEl.append(cityCard);
         }
       }
@@ -75,7 +78,11 @@ function pastSearch(event) {
       currentCard.innerHTML += `<h2>Temp: ${data.main.temp}°F</h2>`;
       currentCard.innerHTML += `<h2>Humidity: ${data.main.humidity}%</h2>`;
       currentCard.innerHTML += `<h2>Wind Speed: ${data.wind.speed} mph</h2>`;
-      currentCard.classList.add("current-styling");
+      if (data.main.temp > 65) {
+        currentCard.classList.add("current-styling-hot");
+      } else {
+        currentCard.classList.add("current-styling-cold");
+      }
       divCurrentEl.append(currentCard);
     });
 }
@@ -102,7 +109,11 @@ function search() {
           cityCard.innerHTML += `<h2>Temp: ${data.list[i].main.temp}°F</h2>`;
           cityCard.innerHTML += `<h2>Humidity: ${data.list[i].main.humidity}%</h2>`;
           cityCard.innerHTML += `<h2>Wind Speed: ${data.list[i].wind.speed} mph</h2>`;
-          cityCard.classList.add("styling");
+          if (data.list[i].main.temp > 65) {
+            cityCard.classList.add("styling-hot");
+          } else {
+            cityCard.classList.add("styling-cold");
+          }
           divCityEl.append(cityCard);
         }
       }
@@ -122,7 +133,11 @@ function search() {
       currentCard.innerHTML += `<h2>Temp: ${data.main.temp}°F</h2>`;
       currentCard.innerHTML += `<h2>Humidity: ${data.main.humidity}%</h2>`;
       currentCard.innerHTML += `<h2>Wind Speed: ${data.wind.speed} mph</h2>`;
-      currentCard.classList.add("current-styling");
+      if (data.main.temp > 65) {
+        currentCard.classList.add("current-styling-hot");
+      } else {
+        currentCard.classList.add("current-styling-cold");
+      }
       divCurrentEl.append(currentCard);
     });
 

@@ -12,13 +12,23 @@
   background-color: lightpink;
   color: white;
 }
-.styling {
+.styling-cold {
   text-align: center;
   border: 2.5px solid rgba(14, 130, 218, 0.742);
   padding: 10px;
   margin: 5px;
   border-radius: 8px;
   background-image: linear-gradient(white, rgb(181, 195, 241), rgb(0, 163, 251), rgb(0, 109, 251));
+  color: white;
+}
+
+.styling-hot {
+  text-align: center;
+  border: 2.5px solid rgba(255, 89, 0, 0.742);
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  background-image: linear-gradient(white, rgb(255, 251, 142), rgb(255, 195, 65), rgb(211, 57, 15));
   color: white;
 }
 
@@ -43,5 +53,29 @@
   border-radius: 8px;
   cursor: pointer;
   background-image: linear-gradient(white, rgb(181, 195, 241), rgb(0, 163, 251), rgb(0, 109, 251));
+  color: white;
+}
+
+.current-styling-cold {
+  text-align: center;
+  border: 2.5px solid rgba(14, 130, 218, 0.742);
+  padding: 0 100px;
+  padding-bottom: 15px;
+  margin: 15px 2px 2px 2px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-image: linear-gradient(white, rgb(181, 195, 241), rgb(0, 163, 251), rgb(0, 109, 251));
+  color: white;
+}
+
+.current-styling-hot {
+  text-align: center;
+  border: 2.5px solid rgba(218, 31, 14, 0.742);
+  padding: 0 100px;
+  padding-bottom: 15px;
+  margin: 15px 2px 2px 2px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-image: linear-gradient(white, rgb(255, 251, 142), rgb(255, 195, 65), rgb(211, 57, 15));
   color: white;
 }
