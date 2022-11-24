@@ -13,7 +13,7 @@ function init() {
   citiesArray.forEach((object) => {
     if (count < 10) {
       let pastCity = document.createElement("div");
-      pastCity.innerHTML = object.city;
+      pastCity.innerHTML = object.city[0].toUpperCase() + object.city.slice(1);
       asidePastEl.append(pastCity);
       count++;
       pastCity.classList.add("past-styling");
