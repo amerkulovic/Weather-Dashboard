@@ -5,6 +5,22 @@
   border-radius: 8px;
   text-align: center;
   color: #6b11ff;
+  background-color: white;
+}
+
+.background {
+  background: url("lukasz-lada-LtWFFVi1RXQ-unsplash.jpg");
+  background-size: cover;
+}
+.past-styling {
+  text-align: center;
+  padding: 6px 2px;
+  margin: 4px 5px;
+  background-color: #6b11ff;
+  border: 1px solid white;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .styling-cold {
@@ -25,16 +41,6 @@
   border-radius: 8px;
   background-image: linear-gradient(white, rgb(255, 251, 142), rgb(255, 195, 65), rgb(251, 140, 49), rgb(203, 18, 18), rgb(166, 40, 5));
   color: white;
-}
-
-.past-styling {
-  text-align: center;
-  padding: 6px 2px;
-  margin: 2px 5px;
-  background-color: #6b11ff;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
 }
 
 .current-styling-cold {
