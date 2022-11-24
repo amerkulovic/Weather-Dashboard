@@ -9,21 +9,23 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <header class="bg-violet-300 text-stone-50 text-center text-5xl p-4 font-bold">
+    <header class="bg-blue-300 text-stone-50 text-center text-5xl p-4 font-bold">
       <h1>Weather Board</h1>
     </header>
 
     <aside id="aside-past" class="inline-block flex-col">
-      <h1>Past Searches</h1>
+      <input type="text" placeholder="location" class="m-3 border-blue-400 border-2 p-0.5 text-blue-800 bg-blue-100" id="searchInput" />
+      <button class="border-blue-800 border-2 p-1.5 rounded-lg text-white bg-blue-500" id="btnSearch">Search</button>
+      <h1 id="search-header">Past Searches</h1>
     </aside>
-    <section>
-      <div id="div-current" class="hidden"></div>
-    </section>
+    <!-- <section class="flex justify-center">
+      <div id="div-current" class="flex items-center justify-center hidden px-5"></div>
+    </section> -->
 
-    <section class="flex flex-col justify-center place-content-center mt-5 items-center">
-      <input type="text" placeholder="location" class="m-3 border-purple-400 border-2 p-0.5 text-fuchsia-800 bg-purple-100 w-1/4" id="searchInput" />
-      <button class="border-purple-400 border-2 p-1.5 rounded-lg text-white bg-purple-500 w-1/6" id="btnSearch">Search</button>
-      <div id="div-city" class="flex flex-row m-5 p-3 hidden w-4/6"></div>
+    <section class="inline-block flex-row">
+      <div id="div-current" class="flex items-center justify-center hidden px-5 mb-3"></div>
+      <h1 id="h1-forecast" class="flex items-center justify-center text-sky-700 text-center text-3xl p-4 font-bold hidden">5-Day Forecast</h1>
+      <div id="div-city" class="flex flex-row m-2 p-3 hidden"></div>
     </section>
   </body>
   <script src="script.js"></script>

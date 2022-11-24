@@ -4,7 +4,7 @@ let searchInputEl = document.querySelector("#searchInput");
 let divCityEl = document.querySelector("#div-city");
 let divCurrentEl = document.querySelector("#div-current");
 let asidePastEl = document.querySelector("#aside-past");
-let pastBtnEl = document.querySelectorAll(".past-styling");
+let forecastH1El = document.querySelector("#h1-forecast");
 
 let citiesArray = JSON.parse(localStorage.getItem("Cities")) || [];
 // Functions
@@ -33,6 +33,7 @@ function getToday() {
 }
 
 function pastSearch(event) {
+  forecastH1El.classList.remove("hidden");
   divCityEl.classList.remove("hidden");
   divCurrentEl.classList.remove("hidden");
   let city = event.target.innerHTML;
@@ -49,7 +50,7 @@ function pastSearch(event) {
         let dtText = data.list[i].dt_txt.split(" ")[1];
         if (dtText === "15:00:00") {
           let cityCard = document.createElement("div");
-          cityCard.innerHTML += `<img src="http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png"/>`;
+          cityCard.innerHTML += `<img class="mx-auto" src="http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png"/>`;
           cityCard.innerHTML += `<h1>Date: ${data.list[i].dt_txt.split(" ")[0]}</h1>`;
           cityCard.innerHTML += `<h2>Temp: ${data.list[i].main.temp}°F</h2>`;
           cityCard.innerHTML += `<h2>Humidity: ${data.list[i].main.humidity}%</h2>`;
@@ -69,17 +70,18 @@ function pastSearch(event) {
     .then(function (data) {
       divCurrentEl.innerHTML = "";
       let currentCard = document.createElement("div");
-      currentCard.innerHTML += `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"/>`;
-      currentCard.innerHTML += `<h1>Date: ${getToday()}</h1>`;
+      currentCard.innerHTML += `<img class="mx-auto" src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"/>`;
+      currentCard.innerHTML += `<h1>Today: ${getToday()}</h1>`;
       currentCard.innerHTML += `<h2>Temp: ${data.main.temp}°F</h2>`;
       currentCard.innerHTML += `<h2>Humidity: ${data.main.humidity}%</h2>`;
       currentCard.innerHTML += `<h2>Wind Speed: ${data.wind.speed} mph</h2>`;
-      currentCard.classList.add("styling");
+      currentCard.classList.add("current-styling");
       divCurrentEl.append(currentCard);
     });
 }
 
 function search() {
+  forecastH1El.classList.remove("hidden");
   divCurrentEl.classList.remove("hidden");
   divCityEl.classList.remove("hidden");
   let city = searchInputEl.value;
@@ -95,7 +97,7 @@ function search() {
         let dtText = data.list[i].dt_txt.split(" ")[1];
         if (dtText === "18:00:00") {
           let cityCard = document.createElement("div");
-          cityCard.innerHTML += `<img src="http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png"/>`;
+          cityCard.innerHTML += `<img class="mx-auto" src="http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png"/>`;
           cityCard.innerHTML += `<h1>Date: ${data.list[i].dt_txt.split(" ")[0]}</h1>`;
           cityCard.innerHTML += `<h2>Temp: ${data.list[i].main.temp}°F</h2>`;
           cityCard.innerHTML += `<h2>Humidity: ${data.list[i].main.humidity}%</h2>`;
@@ -115,12 +117,12 @@ function search() {
     .then(function (data) {
       divCurrentEl.innerHTML = "";
       let currentCard = document.createElement("div");
-      currentCard.innerHTML += `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"/>`;
-      currentCard.innerHTML += `<h1>Date: ${getToday()}</h1>`;
+      currentCard.innerHTML += `<img class="mx-auto" src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"/>`;
+      currentCard.innerHTML += `<h1>Today: ${getToday()}</h1>`;
       currentCard.innerHTML += `<h2>Temp: ${data.main.temp}°F</h2>`;
       currentCard.innerHTML += `<h2>Humidity: ${data.main.humidity}%</h2>`;
       currentCard.innerHTML += `<h2>Wind Speed: ${data.wind.speed} mph</h2>`;
-      currentCard.classList.add("styling");
+      currentCard.classList.add("current-styling");
       divCurrentEl.append(currentCard);
     });
 
@@ -134,7 +136,5 @@ function search() {
 
 // Function calls
 init();
-
 // Event Listeners
 btnSearchEl.addEventListener("click", search);
-
