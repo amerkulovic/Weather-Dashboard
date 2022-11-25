@@ -70,3 +70,42 @@
   background-image: linear-gradient(white, rgb(255, 251, 142), rgb(255, 195, 65), rgb(251, 140, 49), rgb(203, 18, 18), rgb(166, 40, 5));
   color: white;
 }
+
+@media screen and (max-width: 1342px) {
+  .styling-cold {
+    padding: 3px;
+    margin: 2px;
+  }
+  .styling-hot {
+    padding: 3px;
+    margin: 2px;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .styling-cold {
+    padding: 2px;
+    margin: 2px;
+  }
+  .styling-hot {
+    padding: 2px;
+    margin: 2px;
+  }
+}
+
+@media screen and (max-width: 1228px) {
+  #search-header {
+    display: none;
+  }
+  .past-styling {
+    display: none;
+  }
+  .styling-cold {
+    padding: 4px;
+    margin: 5px;
+  }
+  .styling-hot {
+    padding: 4px;
+    margin: 5px;
+  }
+}
