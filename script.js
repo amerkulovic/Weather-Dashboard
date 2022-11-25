@@ -102,7 +102,7 @@ function search() {
       divCityEl.innerHTML = "";
       for (let i = 0; i < data.list.length; i++) {
         let dtText = data.list[i].dt_txt.split(" ")[1];
-        if (dtText === "18:00:00") {
+        if (dtText === "15:00:00") {
           let cityCard = document.createElement("div");
           cityCard.innerHTML += `<img class="mx-auto" src="http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png"/>`;
           cityCard.innerHTML += `<h1>Date: ${data.list[i].dt_txt.split(" ")[0]}</h1>`;

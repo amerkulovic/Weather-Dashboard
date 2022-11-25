@@ -22,6 +22,10 @@
   border-radius: 8px;
   cursor: pointer;
 }
+.past-styling:hover {
+  background-color: transparent;
+  background-image: linear-gradient(90deg, blue, purple, red);
+}
 
 .styling-cold {
   text-align: center;
@@ -29,7 +33,7 @@
   padding: 10px;
   margin: 5px;
   border-radius: 8px;
-  background-image: linear-gradient(white, rgb(181, 195, 241), rgb(0, 163, 251), rgb(0, 109, 251));
+  background-image: linear-gradient(white, rgb(181, 195, 241), rgb(0, 163, 251), rgb(0, 109, 251), rgb(0, 17, 251), rgb(0, 14, 209));
   color: white;
 }
 
@@ -51,7 +55,7 @@
   margin: 15px 2px 2px 2px;
   border-radius: 8px;
   cursor: pointer;
-  background-image: linear-gradient(white, rgb(181, 195, 241), rgb(0, 163, 251), rgb(0, 109, 251));
+  background-image: linear-gradient(white, rgb(181, 195, 241), rgb(0, 163, 251), rgb(0, 109, 251), rgb(0, 17, 251), rgb(0, 14, 209));
   color: white;
 }
 
