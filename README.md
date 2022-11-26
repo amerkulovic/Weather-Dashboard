@@ -15,6 +15,6 @@ This application allows you to search in a city and see the weather for the curr
 
 ## Screenshot
 
-![Alt text](/imgs/Screen%20Shot%202022-11-26%20at%203.39.40%20PM.png"Weather Application")
+![Alt text](Screen%20Shot%202022-11-26%20at%203.39.40%20PM.png"Weather Application")
 
 ## Link
