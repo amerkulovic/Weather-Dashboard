@@ -16,12 +16,12 @@ function init() {
       if (object.city.split(" ").length > 1) {
         let newString = "";
         for (let i = 0; i < object.city.split(" ").length; i++) {
-          newString += object.city.split(" ")[i][0].toUpperCase() + object.city.split(" ")[i].slice(1);
+          newString += object.city.split(" ")[i][0].toUpperCase() + object.city.split(" ")[i].toLowerCase().slice(1);
           newString += " ";
         }
         pastCity.innerHTML = newString.trim();
       } else {
-        pastCity.innerHTML = object.city[0].toUpperCase() + object.city.slice(1);
+        pastCity.innerHTML = object.city[0].toUpperCase() + object.city.toLowerCase().slice(1);
       }
 
       asidePastEl.append(pastCity);
